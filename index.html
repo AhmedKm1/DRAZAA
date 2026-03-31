@@ -220,7 +220,7 @@
       transform: scale(1.08);
     }
 
-    .item-image-wrapper.flip-left img {
+    .item-image-wrapper.flip-left {
       transform: scaleX(-1);
     }
 
@@ -721,19 +721,6 @@
     <div class="gallery-grid">
       <div class="item" onclick="openModal(0)">
         <div class="item-image-wrapper">
-          <img src="https://i.imgur.com/nWktisX.png" alt="Birth then Death - Abu Al‑Qumsan">
-          <div class="overlay">
-            <button class="buy-btn">View</button>
-          </div>
-        </div>
-        <div class="item-info">
-          <div class="item-title">Birth then Death - Abu Al‑Qumsan</div>
-          <div class="item-price">$250</div>
-        </div>
-      </div>
-
-      <div class="item" onclick="openModal(1)">
-        <div class="item-image-wrapper">
           <img src="https://i.imgur.com/9TCiQ9v.png" alt="The Soul of My Soul-Gaza">
           <div class="overlay">
             <button class="buy-btn">View</button>
@@ -741,6 +728,19 @@
         </div>
         <div class="item-info">
           <div class="item-title">The Soul of My Soul-Gaza</div>
+          <div class="item-price">$250</div>
+        </div>
+      </div>
+
+      <div class="item" onclick="openModal(1)">
+        <div class="item-image-wrapper">
+          <img src="https://i.imgur.com/nWktisX.png" alt="Birth then Death - Abu Al‑Qumsan">
+          <div class="overlay">
+            <button class="buy-btn">View</button>
+          </div>
+        </div>
+        <div class="item-info">
+          <div class="item-title">Birth then Death - Abu Al‑Qumsan</div>
           <div class="item-price">$280</div>
         </div>
       </div>
@@ -888,16 +888,16 @@
 <script>
 const artworks = [
   {
-    title: "Birth then Death - Abu Al‑Qumsan",
-    price: "$250",
-    image: "https://i.imgur.com/nWktisX.png",
-    description: `You might have seen this drawing on TikTok that got 372.5k views, here's the full video of how I made it:⬇️<br><br><a href="https://vt.tiktok.com/ZSSY6gRxH/" target="_blank">https://vt.tiktok.com/ZSSY6gRxH/</a><br><br>• This drawing captures the moment a father, Mohammed Abu Al‑Qumsan in Gaza, held his newborn twins' birth certificates—only to return minutes later to find them, his wife, and mother‑in‑law dead in an airstrike. What is supposed to be life-affirming turned into grief in less than ten minutes.<br><br>In my drawing, I reimagined that moment—I replaced the birth certificates with his twins themselves, as if he's holding them in his arms one final time.<br><br>Each stroke is a memory, a testimony to the lives stolen before they even had a chance to live<br><br><strong>-Note▶️:</strong> Selling this helps me save my family (my little sister Eileen, brother, mother and my father) they're still trapped in Gaza and I'm the only hope for them trying my hardest with all my breath to save them before it's too late, thank you🕊️`
-  },
-  {
     title: "The Soul of My Soul-Gaza",
-    price: "$280",
+    price: "$250",
     image: "https://i.imgur.com/9TCiQ9v.png",
     description: `You might have seen this drawing on TikTok<br>here's the full video of how I made it:⬇️<br><br><a href="https://vt.tiktok.com/ZSSY6M4FC/" target="_blank">https://vt.tiktok.com/ZSSY6M4FC/</a><br><br>• This drawing portrays Khaled "Abu Diaa" Nabhan holding his granddaughter Reem, softly kissing her eyes as she lay lifeless in his arms. He repeated, "the soul of my soul", over and over.<br><br>His grief spoke louder than words—a grandfather's final goodbye became a global symbol of innocence lost and love persevering under genocide.<br><br><strong>-Note▶️:</strong> Selling this helps me save my family (my little sister Eileen, brother, mother and my father) they're still trapped in Gaza and I'm the only hope for them trying my hardest with all my breath to save them before it's too late, thank you🕊️🙏🏻`
+  },
+  {
+    title: "Birth then Death - Abu Al‑Qumsan",
+    price: "$280",
+    image: "https://i.imgur.com/nWktisX.png",
+    description: `You might have seen this drawing on TikTok that got 372.5k views, here's the full video of how I made it:⬇️<br><br><a href="https://vt.tiktok.com/ZSSY6gRxH/" target="_blank">https://vt.tiktok.com/ZSSY6gRxH/</a><br><br>• This drawing captures the moment a father, Mohammed Abu Al‑Qumsan in Gaza, held his newborn twins' birth certificates—only to return minutes later to find them, his wife, and mother‑in‑law dead in an airstrike. What is supposed to be life-affirming turned into grief in less than ten minutes.<br><br>In my drawing, I reimagined that moment—I replaced the birth certificates with his twins themselves, as if he's holding them in his arms one final time.<br><br>Each stroke is a memory, a testimony to the lives stolen before they even had a chance to live<br><br><strong>-Note▶️:</strong> Selling this helps me save my family (my little sister Eileen, brother, mother and my father) they're still trapped in Gaza and I'm the only hope for them trying my hardest with all my breath to save them before it's too late, thank you🕊️`
   },
   {
     title: "Eyes That Won't Forget -Gaza",
