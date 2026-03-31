@@ -110,7 +110,7 @@
     .hero {
       position: relative;
       width: 100%;
-      height: 320px;
+      height: 500px;
       background: linear-gradient(135deg, #1a1a1a 0%, #000 100%);
       display: flex;
       align-items: center;
@@ -125,6 +125,9 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
     }
 
     .hero-overlay {
@@ -133,7 +136,7 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.3);
+      background: rgba(0, 0, 0, 0.4);
       z-index: 1;
     }
 
@@ -227,7 +230,7 @@
       transform: scale(1.08);
     }
 
-    .item-image-wrapper.flip-left {
+    .item-image-wrapper.flip-right {
       transform: scaleX(-1);
     }
 
@@ -302,7 +305,7 @@
       border-top: 1px solid #333;
       border-bottom: 1px solid #333;
       display: grid;
-      grid-template-columns: 250px 1fr;
+      grid-template-columns: 300px 1fr;
       gap: 60px;
       align-items: center;
     }
@@ -431,10 +434,12 @@
       color: #64b5f6;
       text-decoration: none;
       word-break: break-all;
+      transition: color 0.3s ease;
     }
 
     .modal-description a:hover {
       color: #90caf9;
+      text-decoration: underline;
     }
 
     .modal-description p {
@@ -705,7 +710,7 @@
 
       .hero {
         margin: 20px 0;
-        height: 250px;
+        height: 300px;
       }
 
       .hero-content h1 {
@@ -755,8 +760,8 @@
 
 <div id="shop" class="page active">
   <div class="hero">
+    <img src="https://i.imgur.com/3aPmh7u.jpg" alt="Hero">
     <div class="hero-overlay"></div>
-    <img src="https://imgur.com/a/LAtwir8" alt="Hero">
     <div class="hero-content">
       <h1>Art That Saves Lives</h1>
     </div>
@@ -767,20 +772,6 @@
     <div class="gallery-grid">
       <div class="item" onclick="openModal(0)">
         <div class="item-image-wrapper">
-          <img src="https://i.imgur.com/9TCiQ9v.png" alt="The Soul of My Soul-Gaza">
-          <div class="overlay">
-            <button class="buy-btn">View</button>
-          </div>
-        </div>
-        <div class="item-info">
-          <div class="item-title">The Soul of My Soul-Gaza</div>
-          <div class="item-price">$250</div>
-          <div class="item-buy-label">BUY NOW</div>
-        </div>
-      </div>
-
-      <div class="item" onclick="openModal(1)">
-        <div class="item-image-wrapper">
           <img src="https://i.imgur.com/nWktisX.png" alt="Birth then Death - Abu Al‑Qumsan">
           <div class="overlay">
             <button class="buy-btn">View</button>
@@ -788,13 +779,27 @@
         </div>
         <div class="item-info">
           <div class="item-title">Birth then Death - Abu Al‑Qumsan</div>
+          <div class="item-price">$250</div>
+          <div class="item-buy-label">BUY NOW</div>
+        </div>
+      </div>
+
+      <div class="item" onclick="openModal(1)">
+        <div class="item-image-wrapper">
+          <img src="https://i.imgur.com/9TCiQ9v.png" alt="The Soul of My Soul-Gaza">
+          <div class="overlay">
+            <button class="buy-btn">View</button>
+          </div>
+        </div>
+        <div class="item-info">
+          <div class="item-title">The Soul of My Soul-Gaza</div>
           <div class="item-price">$280</div>
           <div class="item-buy-label">BUY NOW</div>
         </div>
       </div>
 
       <div class="item" onclick="openModal(2)">
-        <div class="item-image-wrapper flip-left">
+        <div class="item-image-wrapper flip-right">
           <img src="https://i.imgur.com/QDSQlhg.png" alt="Eyes That Won't Forget -Gaza">
           <div class="overlay">
             <button class="buy-btn">View</button>
@@ -825,7 +830,7 @@
 
   <div class="artist-section">
     <div class="artist-image">
-      <img src="https://imgur.com/a/LAtwir8" alt="Ahmed">
+      <img src="https://i.imgur.com/3aPmh7u.jpg" alt="Ahmed">
     </div>
     <div class="artist-info">
       <h3>Featured Artist</h3>
@@ -920,7 +925,7 @@
       <p class="modal-price" id="modalPrice"></p>
       <div class="modal-description" id="modalDescription"></div>
       
-      <button id="checkout-btn" class="purchase-btn">BUY NOW - STRIPE CHECKOUT</button>
+      <button id="checkout-btn" class="purchase-btn">BUY NOW</button>
     </div>
   </div>
 </div>
@@ -939,18 +944,18 @@
 <script>
 const artworks = [
   {
-    title: "The Soul of My Soul-Gaza",
+    title: "Birth then Death - Abu Al‑Qumsan",
     price: 250,
     priceId: "price_1234567890",
-    image: "https://i.imgur.com/9TCiQ9v.png",
-    description: `You might have seen this drawing on TikTok<br>here's the full video of how I made it:⬇️<br><br><a href="https://vt.tiktok.com/ZSSY6M4FC/" target="_blank">https://vt.tiktok.com/ZSSY6M4FC/</a><br><br>• This drawing portrays Khaled "Abu Diaa" Nabhan holding his granddaughter Reem, softly kissing her eyes as she lay lifeless in his arms. He repeated, "the soul of my soul", over and over.<br><br>His grief spoke louder than words—a grandfather's final goodbye became a global symbol of innocence lost and love persevering under genocide.<br><br><strong>-Note▶️:</strong> Selling this helps me save my family (my little sister Eileen, brother, mother and my father) they're still trapped in Gaza and I'm the only hope for them trying my hardest with all my breath to save them before it's too late, thank you🕊️🙏🏻`
-  },
-  {
-    title: "Birth then Death - Abu Al‑Qumsan",
-    price: 280,
-    priceId: "price_1234567891",
     image: "https://i.imgur.com/nWktisX.png",
     description: `You might have seen this drawing on TikTok that got 372.5k views, here's the full video of how I made it:⬇️<br><br><a href="https://vt.tiktok.com/ZSSY6gRxH/" target="_blank">https://vt.tiktok.com/ZSSY6gRxH/</a><br><br>• This drawing captures the moment a father, Mohammed Abu Al‑Qumsan in Gaza, held his newborn twins' birth certificates—only to return minutes later to find them, his wife, and mother‑in‑law dead in an airstrike. What is supposed to be life-affirming turned into grief in less than ten minutes.<br><br>In my drawing, I reimagined that moment—I replaced the birth certificates with his twins themselves, as if he's holding them in his arms one final time.<br><br>Each stroke is a memory, a testimony to the lives stolen before they even had a chance to live<br><br><strong>-Note▶️:</strong> Selling this helps me save my family (my little sister Eileen, brother, mother and my father) they're still trapped in Gaza and I'm the only hope for them trying my hardest with all my breath to save them before it's too late, thank you🕊️`
+  },
+  {
+    title: "The Soul of My Soul-Gaza",
+    price: 280,
+    priceId: "price_1234567891",
+    image: "https://i.imgur.com/9TCiQ9v.png",
+    description: `You might have seen this drawing on TikTok<br>here's the full video of how I made it:⬇️<br><br><a href="https://vt.tiktok.com/ZSSY6M4FC/" target="_blank">https://vt.tiktok.com/ZSSY6M4FC/</a><br><br>• This drawing portrays Khaled "Abu Diaa" Nabhan holding his granddaughter Reem, softly kissing her eyes as she lay lifeless in his arms. He repeated, "the soul of my soul", over and over.<br><br>His grief spoke louder than words—a grandfather's final goodbye became a global symbol of innocence lost and love persevering under genocide.<br><br><strong>-Note▶️:</strong> Selling this helps me save my family (my little sister Eileen, brother, mother and my father) they're still trapped in Gaza and I'm the only hope for them trying my hardest with all my breath to save them before it's too late, thank you🕊️🙏🏻`
   },
   {
     title: "Eyes That Won't Forget -Gaza",
